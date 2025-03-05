@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        nav button:hover {
+            background-color: #0056b3;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #007BFF;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .carousel {
+            width: 50%;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: top;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Medical Records System</h1>
+        <nav>
+            <button onclick="scrollToSection('dashboard')">Dashboard</button>
+            <button onclick="scrollToSection('patients')">Patients</button>
+            <button onclick="scrollToSection('appointments')">Appointments</button>
+            <button onclick="scrollToSection('contact')">Contact</button>
+        </nav>
+    </header>
+    <main>
+        <div class="carousel">
+            <img src="image_1.jpg" class="active" alt="Medical Image 1">
+            <img src="image_2.jpg" alt="Medical Image 2">
+            <img src="image_3.jpg" alt="Medical Image 3">
+        </div>
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Welcome to the medical records system.</p>
+        </section>
+        <section id="patients">
+            <h2>Patient Records</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Condition</th>
+                    <th>Last Visit</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>John Doe</td>
+                    <td>45</td>
+                    <td>Diabetes</td>
+                    <td>2025-02-10</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Jane Smith</td>
+                    <td>30</td>
+                    <td>Hypertension</td>
+                    <td>2025-02-15</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        let index = 0;
+        function showNextImage() {
+            let images = document.querySelectorAll('.carousel img');
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
+</html>
