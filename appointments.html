@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - Medical Records</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fc;
+            color: #333;
+        }
+        nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        nav a {
+            background-color: #0056a3;
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        nav a:hover {
+            background-color: #003d7a;
+            transform: scale(1.05);
+        }
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0056a3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #003d7a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #0056a3;
+            color: white;
+        }
+        tr:hover {
+            background-color: #d0e4ff;
+            transition: background 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Appointments</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="patients.html">Patients</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Book an Appointment</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="text" placeholder="Contact Information" required>
+            <textarea placeholder="Reason for Appointment" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Doctor's Availability</h2>
+        <table>
+            <tr>
+                <th>Doctor</th>
+                <th>Specialization</th>
+                <th>Available Time</th>
+            </tr>
+            <tr>
+                <td>Dr. John Smith</td>
+                <td>Cardiologist</td>
+                <td>9:00 AM - 3:00 PM</td>
+            </tr>
+            <tr>
+                <td>Dr. Emily Brown</td>
+                <td>Dermatologist</td>
+                <td>10:00 AM - 4:00 PM</td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>
