@@ -3,70 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Records</title>
+    <title>Home - Medical Records</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff;
+            background-color: #f4f8fc;
             color: #333;
+            background-image: url('background.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
         }
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 15px;
-            text-align: center;
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
+            z-index: -1;
         }
         nav {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 15px;
         }
-        nav button {
-            background-color: #007BFF;
+        nav a {
+            background-color: #0056a3;
             color: white;
-            border: none;
-            padding: 10px 20px;
+            text-decoration: none;
+            padding: 12px 24px;
             margin: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
+            display: inline-block;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.2s;
         }
-        nav button:hover {
-            background-color: #0056b3;
+        nav a:hover {
+            background-color: #003d7a;
+            transform: scale(1.05);
         }
         main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: left;
+            position: relative;
+        }
+        .content {
+            flex: 1;
+            max-width: 50%;
             padding: 20px;
-            text-align: center;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #007BFF;
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #007BFF;
-            color: white;
+        .carousel-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
         }
         .carousel {
-            width: 50%;
-            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
             overflow: hidden;
             position: relative;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         .carousel img {
             width: 100%;
-            max-height: 300px;
+            height: 400px;
             object-fit: cover;
             object-position: top;
             display: none;
+            border-radius: 12px;
         }
         .carousel img.active {
             display: block;
@@ -77,54 +89,26 @@
     <header>
         <h1>Medical Records System</h1>
         <nav>
-            <button onclick="scrollToSection('dashboard')">Dashboard</button>
-            <button onclick="scrollToSection('patients')">Patients</button>
-            <button onclick="scrollToSection('appointments')">Appointments</button>
-            <button onclick="scrollToSection('contact')">Contact</button>
+            <a href="index.html">Home</a>
+            <a href="patients.html">Patients</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
     <main>
-        <div class="carousel">
-            <img src="image_1.jpg" class="active" alt="Medical Image 1">
-            <img src="image_2.jpg" alt="Medical Image 2">
-            <img src="image_3.jpg" alt="Medical Image 3">
+        <div class="content">
+            <h2>Welcome to the Medical Records System</h2>
+            <p>Efficiently manage patient records, appointments, and hospital contact details in one place.</p>
         </div>
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <p>Welcome to the medical records system.</p>
-        </section>
-        <section id="patients">
-            <h2>Patient Records</h2>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Condition</th>
-                    <th>Last Visit</th>
-                </tr>
-                <tr>
-                    <td>001</td>
-                    <td>John Doe</td>
-                    <td>45</td>
-                    <td>Diabetes</td>
-                    <td>2025-02-10</td>
-                </tr>
-                <tr>
-                    <td>002</td>
-                    <td>Jane Smith</td>
-                    <td>30</td>
-                    <td>Hypertension</td>
-                    <td>2025-02-15</td>
-                </tr>
-            </table>
-        </section>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="image_1.jpg" class="active" alt="Medical Image 1">
+                <img src="image_2.jpg" alt="Medical Image 2">
+                <img src="image_3.jpg" alt="Medical Image 3">
+            </div>
+        </div>
     </main>
     <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-        
         let index = 0;
         function showNextImage() {
             let images = document.querySelectorAll('.carousel img');
