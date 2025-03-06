@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Medical Records</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+        
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #f4f8fc;
-            color: #333;
-            background-image: url('background.jpg'); /* Replace with your image path */
+            font-family: 'Poppins', sans-serif;
+            background: url('background_1.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            flex-direction: column;
         }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent overlay */
-            z-index: -1;
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #0056a3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            height: 90px;
+            margin-right: 15px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            margin: 0;
         }
         nav {
             text-align: center;
-            margin-top: 15px;
         }
         nav a {
-            background-color: #0056a3;
+            background-color: #003d7a;
             color: white;
             text-decoration: none;
             padding: 12px 24px;
@@ -43,7 +57,7 @@
             transition: background 0.3s, transform 0.2s;
         }
         nav a:hover {
-            background-color: #003d7a;
+            background-color: #002d5a;
             transform: scale(1.05);
         }
         main {
@@ -52,7 +66,7 @@
             justify-content: center;
             padding: 40px;
             text-align: left;
-            position: relative;
+            flex: 1;
         }
         .content {
             flex: 1;
@@ -83,11 +97,56 @@
         .carousel img.active {
             display: block;
         }
+        .testimonials {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px 10%;
+            border-radius: 12px;
+        }
+        .testimonial {
+            background: rgba(249, 249, 249, 0.85);
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 600px;
+            border-radius: 10px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .testimonial::before {
+            content: "\201C";
+            font-size: 40px;
+            color: #0056a3;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+        }
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .footer {
+            background-color: #003d7a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Medical Records System</h1>
+        <div class="logo-container">
+            <img src="logo_1.png" alt="Logo" class="logo">
+            <h1>Medical Records System</h1>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="patients.html">Patients</a>
@@ -108,15 +167,19 @@
             </div>
         </div>
     </main>
-    <script>
-        let index = 0;
-        function showNextImage() {
-            let images = document.querySelectorAll('.carousel img');
-            images[index].classList.remove('active');
-            index = (index + 1) % images.length;
-            images[index].classList.add('active');
-        }
-        setInterval(showNextImage, 3000);
-    </script>
+    <section class="testimonials">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonial">
+            <img src="user_icon_f.png" alt="User 1">
+            "This system has made managing my appointments so much easier!" - Jane D.
+        </div>
+        <div class="testimonial">
+            <img src="user_icon_m.png" alt="User 2">
+            "The patient record tracking is seamless and efficient." - Mark R.
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2025 Medical Records System. All rights reserved.</p>
+    </footer>
 </body>
 </html>
