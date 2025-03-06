@@ -3,21 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us - St. Venies Hospital</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        
+        html, body {
+            height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #f4f8fc;
+            font-family: 'Poppins', sans-serif;
+            background: url('background_1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-attachment: fixed;
             color: #333;
+            display: flex;
+            flex-direction: column;
         }
-        nav {
-            text-align: center;
-            margin-top: 15px;
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #0056a3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            height: 90px;
+            margin-right: 15px;
+        }
+        h1 {
+            margin: 0;
         }
         nav a {
-            background-color: #0056a3;
+            background-color: #003d7a;
             color: white;
             text-decoration: none;
             padding: 12px 24px;
@@ -28,15 +51,16 @@
             transition: background 0.3s, transform 0.2s;
         }
         nav a:hover {
-            background-color: #003d7a;
+            background-color: #002d5a;
             transform: scale(1.05);
         }
         main {
+            flex: 1;
             padding: 40px;
             text-align: center;
         }
         .contact-info {
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
             padding: 30px;
             max-width: 600px;
             margin: auto;
@@ -53,16 +77,24 @@
             margin: 10px 0;
             color: #444;
         }
-        .contact-info p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
+        .footer {
+            background-color: #003d7a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+        .footer p {
+             color: white;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Contact Us</h1>
+        <div class="logo-container">
+            <img src="logo_1.png" alt="Logo" class="logo">
+            <h1>St. Venies Hospital</h1>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="patients.html">Patients</a>
@@ -73,15 +105,18 @@
     <main>
         <h2>Hospital Contact Information</h2>
         <div class="contact-info">
-            <p><strong>Hospital Name:</strong> St.Venies Hospital</p>
+            <p><strong>Hospital Name:</strong> St. Venies Hospital</p>
             <p><strong>Address:</strong> Ateneo Avenue, Naga City</p>
             <p><strong>Phone:</strong> (123) 456-7890</p>
-            <p><strong>Email:</strong> contact@stveniesmedical.com</p>
+            <p><strong>Email:</strong> contact@citymedical.com</p>
             <h2>Working Hours</h2>
             <p><strong>Monday - Friday:</strong> 8:00 AM - 8:00 PM</p>
             <p><strong>Saturday:</strong> 9:00 AM - 5:00 PM</p>
             <p><strong>Sunday:</strong> Closed</p>
         </div>
     </main>
+    <footer class="footer">
+        <p>&copy; 2025 St. Venies Hospital. All rights reserved.</p>
+    </footer>
 </body>
 </html>
